@@ -22,11 +22,4 @@
 /** SPI serial clock pin. */
 #define SCK  SCK_PIN
 
-//------------------------------------------------------------------------------
-// DAC pin definitions
-
-// LDAC may be connected to ground to save a pin
-/** Set USE_MCP_DAC_LDAC to 0 if LDAC is grounded. */
-#define SPEAKER_PIN 3
-
 #endif // WavePinDefs_h

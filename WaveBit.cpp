@@ -1,6 +1,8 @@
 /*
- William Greiman's modified version of Ladyada's wave shield library
- I have made many changes that may have introduced bugs.  Major changes are:
+ Andy Karpov's modified version of the  William Greiman's modified version of Ladyada's wave shield library.
+ I did customizations to use a single PWM pin (3) to output sound instead of using DAC.
+ 
+ William's chnges:
  optimized DAC macros to allow 44.1 k 16-bit files
  use of FatReader to read FAT32 and FAT16 files
  modified readwavhack to be readWaveData
@@ -88,10 +90,7 @@ ISR(TIMER1_COMPA_vect) {
   dl = tmp;
 #endif //DVOLUME
 
-  // todo
   cli();
-  //OCR2B = playpos[playing->BitsPerSample/16];
-  //playpos +=(playing->BitsPerSample/8);
   OCR2B = dh;
   sei();
 

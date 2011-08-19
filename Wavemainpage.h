@@ -1,5 +1,6 @@
 /* Arduino WaveBit Library
  * Copyright (C) 2009 by William Greiman
+ * Copyright (C) 2011 by Andrey Karpov
  *  
  * This file is part of the Arduino WaveBit Library
  *  
@@ -20,14 +21,14 @@
 
 /**
 \mainpage Arduino WaveBit Library
-<CENTER>Copyright &copy; 2009 by William Greiman
+<CENTER>Copyright &copy; 2009 by William Greiman, 2011 by Andrey Karpov
 </CENTER>
 
 \section Intro Introduction
 
-WaveBit is an Arduino library for the Adafruit Wave Shield.  It can play
+WaveBit is an Arduino library that can play
 uncompressed mono Wave(.WAV) files at sample rate up to 44.1 K samples per
-second. Only the high 12 bits of 16-bit files are used.  Audio files are read
+second. Only the high 8 bits of 16-bit files are used.  Audio files are read
 from an SD flash memory card.
 
 Standard SD and high capacity SDHC flash memory cards are supported with
@@ -38,7 +39,7 @@ WaveBit does not support MMC flash cards.
 \section comment Bugs and Comments
 
 If you wish to report bugs or have comments, send email to
-fat16lib@sbcglobal.net.
+andy.karpov@gmail.com.
 
 \section SDcard SD/SDHC Cards
 
@@ -48,19 +49,11 @@ functions well on A PC or Mac may not work well on the Arduino.
 
 Most cards have good SPI read performance but cards vary widely in
 how there SPI hardware interface is implemented.  Newer card require
-very fast rise times for SPI signals.  Version 1.0 of the Wave Shield
-may not work well with these cards.  Ladyada's improved Version 1.1
-works with almost all SD/SDHC cards.
-
-The default SPI clock rate is 8 Mhz.  It may be helpful on Version 1.0
-wave shields to reduce this to 4 Mhz. See SdReader::init() for details.
-
-SanDisk cards generally have good performance in the Version 1.0 Wave Shield.
-
+very fast rise times for SPI signals.
 
 \section WaveBitClass WaveBit Usage
 
-See Ladyada's excellent tutorial on using WaveBit:
+See Ladyada's excellent tutorial on using WaveHC library:
 
 http://www.ladyada.net/make/waveshield/libraryhc.html
 
